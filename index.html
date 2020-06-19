@@ -4,10 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Seven Son's Kitchen</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+            />
         <link rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
             crossorigin="anonymous">
+
         <link rel="stylesheet" href="./assets/swiperjs/swiper.min.css">
         <link rel="stylesheet" href="index.css">
 
@@ -56,58 +61,166 @@
             <!-- / -->
             <div class="header">
                 <ul>
-                    <li class="ourStory" id="ourStory">Our Story</li>
-                    <li class="menu" id="menu">Menu</li>
-                    <li class="takeout" id="takeout">Take Out</li>
-                    <li class="catering" id="catering">Catering</li>
-
+                    <li class="menu" id="menu"><a href="#menu">
+                            Menu</a></li>
+                    <li class="takeout" id="takeout">
+                        <a href="#takeout">
+                            Take Out</a></li>
+                    <li class="ourStory" id="ourStory"><a href="#about">
+                            Our Story</a></li>
+                    <li class="catering" id="catering"><a href="#catering">
+                            Catering</a></li>
                 </ul>
             </div>
         </header>
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"
-                                style="background-image:url(./assets/family.jpg)"></div>
-                            <div class="swiper-slide"
-                                style="background-image:url(./assets/family-1.jpg)"></div>
-                            <div class="swiper-slide"
-                                style="background-image:url(./assets/family-2.jpg)"></div>
-                            <div class="swiper-slide"
-                                style="background-image:url(./assets/family-3.jpg)"></div>
-                            <div class="swiper-slide"
-                                style="background-image:url(./assets/family-4.jpg)"></div>
+        <!-- Menu -->
+        <div class="container" id="menu">
+            <h2>Menu</h2>
+            <div class="row top-row">
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/plate_of_ribs.jpeg" alt="">
+                        <div class="overlay">
+                            <h3>Ribs</h3>
                         </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
-                <div class="col-9">
-                    <div class="about">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Possimus earum autem omnis, vitae saepe eum
-                            necessitatibus quod cumque sunt culpa.</p>
-                        <ul class='contact-icons'>
-                            <li><a href=""><i class="fab fa-facebook-square
-                                        fa-2x"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter-square
-                                        fa-2x"></i></a></li>
-                            <li><a href=""><i class="fab fa-instagram-square
-                                        fa-2x"></i></a></li>
-                            <li><a href=""><i class="fas fa-envelope-open-text
-                                        fa-2x"></i></a></li>
-                            <li><a href=""><i class="fas fa-mobile fa-2x"></i></a></li>
-                        </ul>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/chicken_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Chicken</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/crawfish_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Crawfish</h3>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/pork_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Pork</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/turkey_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Turkey</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/pork_links_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Pork Links</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottom-row">
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/coleslaw_plate.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Coleslaw</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/corn.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Fried Corn</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-image"
+                            src="./assets/applepie.jpg" alt="">
+                        <div class="overlay">
+                            <h3>Apple Pie</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Take Out -->
+            <div class="row" id="takeout">
+                <div class="col-6 contact">
+                    <h2>Contact Us</h2>
+                    <h3>Phone: (253) - 555 - 5555</h3>
+                    <h3>Address: 555 S 55th St <br>
+                        Tacoma, WA 98455</h3>
+                    <h3>Email: User@gmail.com</h3>
+                </div>
+                <div class="col-6 location">
+                    <h2>Location</h2>
+                    <img src="./assets/resturant_map.png"></img>
+
+            </div>
         </div>
-
-
+        <!-- About -->
+        <div class="row row-about" id="about">
+            <div class="col-3">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"
+                            style="background-image:url(./assets/family.jpg)"></div>
+                        <div class="swiper-slide"
+                            style="background-image:url(./assets/family-1.jpg)"></div>
+                        <div class="swiper-slide"
+                            style="background-image:url(./assets/family-2.jpg)"></div>
+                        <div class="swiper-slide"
+                            style="background-image:url(./assets/family-3.jpg)"></div>
+                        <div class="swiper-slide"
+                            style="background-image:url(./assets/family-4.jpg)"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="about">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Possimus earum autem omnis, vitae saepe eum
+                        necessitatibus quod cumque sunt culpa.</p>
+                    <ul class='contact-icons'>
+                        <li><a href=""><i class="fab fa-facebook-square
+                                    fa-2x"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter-square
+                                    fa-2x"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram-square
+                                    fa-2x"></i></a></li>
+                        <li><a href=""><i class="fas fa-envelope-open-text
+                                    fa-2x"></i></a></li>
+                        <li><a href=""><i class="fas fa-mobile fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
         <script src="./assets/swiperjs/swiper.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
