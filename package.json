@@ -1,0 +1,28 @@
+{
+  "name": "Seven-Sons-Kitchen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abirgenheier/Seven-Sons-Kitchen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abirgenheier/Seven-Sons-Kitchen/issues"
+  },
+  "homepage": "https://github.com/abirgenheier/Seven-Sons-Kitchen#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.23.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "sequelize": "^5.21.13"
+  }
+}
