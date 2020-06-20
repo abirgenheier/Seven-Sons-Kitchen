@@ -14,7 +14,7 @@
             crossorigin="anonymous">
 
         <link rel="stylesheet" href="./assets/swiperjs/swiper.min.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="./css/index.css">
 
         <header>
             <!-- carousel -->
@@ -175,8 +175,51 @@
                     <h3>Email: User@gmail.com</h3>
                 </div>
                 <div class="col-6 location">
-                    <h2>Location</h2>
-                    <img src="./assets/resturant_map.png"></img>
+                    <form action="">
+                        <div class="login-oauth">
+                            <ul class="login-oauth-list">
+                                <h1>...Or Quick Order</h1>
+                                <li><form action=""><input type="text" id="name"
+                                            placeholder="Enter Name..."></input>
+                                    <input id="phone_number"
+                                        placeholder="Enter Phone Number...">
+                                    <textarea id="order" id="" cols="30"
+                                        rows="10"
+                                        placeholder="List order..."></textarea>
+                                    <input type="button" class="submit"
+                                        value="submit">
+                                </form></li>
+                        </ul>
+                    </div>
+                </form>
+                <!-- Success Modal -->
+                <div class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Order Review</h5>
+                                <button type="button" class="close"
+                                    data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="modal-text"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary
+                                    confirm">Confirm</button>
+                                <button type="button" class="btn btn-danger"><i
+                                        class="fa fa-pencil-square-o"
+                                        aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-secondary
+                                    close"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
 
             </div>
         </div>
@@ -222,9 +265,8 @@
     </div>
     <div>
         <script src="./assets/swiperjs/swiper.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -235,6 +277,6 @@
             crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/a9f3433135.js"
             crossorigin="anonymous"></script>
-        <script src="index.js"></script>
+        <script src="./js/index.js"></script>
     </body>
 </html>

@@ -2,17 +2,15 @@
     "development": {
         "username": "root",
         "password": "gemini253",
-        "database": "countries",
+        "database": "sevensons",
         "host": "127.0.0.1",
-        "port": 3306,
         "dialect": "mysql"
     },
     "test": {
         "username": "root",
-        "password": "gemini253",
-        "database": "country",
+        "password": null,
+        "database": "database_test",
         "host": "127.0.0.1",
-        "port": 3306,
         "dialect": "mysql"
     },
     "production": {

@@ -338,3 +338,35 @@ body{
     left: 0;
     width: 100%;
 }
+
+.login-oauth-list {
+  border: 2px white solid;
+  margin-top: 20px;
+  padding: 10px 40px;
+  margin: 10px;
+}
+
+.login-oauth-list h1 {
+ color: white;
+ text-align: center;
+}
+.login-oauth-list input, textarea {
+  background-color: transparent;
+  color: white;
+  border: .5px solid white;
+  width: 100%
+}
+
+.submit:hover {
+  background-color: rgba(255,255,255,.5)
+}
+.submit:active {
+  transform: scale(.9);
+  background-color: rgba(255,255,255,.3)
+}
+
+.login-oauth-list textarea {
+  width: 100%;
+  background-color: rgba(255,255,255,.9)
+}
+

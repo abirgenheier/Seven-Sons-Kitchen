@@ -1,32 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     var User = sequelize.define("User", {
-        user: {
-            type: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    len: [1]
-                }
-            }
-        },
-        email: {
-            type: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validate: {
-                    len: [1],
-                    isEmail: true
-                }
-
-            }
-        }
+        user: DataTypes.STRING,
+        email: DataTypes.STRING,
     });
 
-    User.assoicate = models => {
-        User.hasMany(models.Reviews, models.Orders, {
-            onDelete: "CASCADE"
-        })
-    }
-
-    return User
+    return User;
 }

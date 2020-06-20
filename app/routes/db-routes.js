@@ -9,6 +9,7 @@ module.exports = app => {
     app.post("/api/user/order", (req, res) => {
         db.Orders.create(req.body).then(results => {
             res.json(results)
+            console.log(req.body)
         })
     })
     app.post("/api/user/review", (req, res) => {
