@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         order: {
             type: DataTypes.STRING
         },
+        total: DataTypes.STRING,
         complete: {
             type: DataTypes.BOOLEAN,
             defaultValue: false

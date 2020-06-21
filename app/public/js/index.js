@@ -71,21 +71,29 @@ function formatPhoneNumber(phoneNumberString) {
     return null
 }
 
+var total_order = []
+var customer_order = []
+
 $('.modal').hide()
 
 $('.submit').click(() => {
     var name = toTitleCase($('#name').val().trim()).replace(/\s+/g, '-')
     var phone_number = formatPhoneNumber($('#phone_number').val().trim())
-    var _order = $('#order').val().trim()
-    console.log(name)
+    var _order = (customer_order.toString()).replace(/,/g, ', ');
+    var sub_total = total_order.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    var total = "$" + ((sub_total * 1.06).toFixed(2)).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     if (name !== '' || name !== null || phone_number !== '' || phone_number !== null || _order !== '' || _order !== null) {
-        $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? Is that correct?`)
-        var order = {
+        $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
+        Please press 'Continue' to pay.`)
+        var send_order = {
             name: name,
             phone_number: phone_number,
-            order: _order
+            order: _order,
+            total: total
         }
-        $.post("/api/user/order", order)
+        $.post("/api/user/order", send_order)
         $('.modal').show()
         fetch('/', {
             method: 'post',
@@ -108,7 +116,24 @@ $('.confirm').click(() => {
     $('.modal').hide()
 })
 
+
+
 function AddToOrder() {
+    $('.orderAbove').empty()
     var item = "#" + (event.target.id).replace(/_/g, ' ');
-    console.log(item)
+
+    document.querySelector('.textarea').innerHTML +=
+        `
+        <a><p class="ordered_items" id="${event.target.id}">${item}    <i class="fa fa-trash delete" aria-hidden="true" onClick="deleteOrder()"></i></a></p>
+    `
+    total_order.push(+event.target.value)
+    customer_order.push(item.substring(3))
+
 }
+
+
+
+function deleteOrder() {
+    event.target.parentNode.style.display = 'none'
+}
+

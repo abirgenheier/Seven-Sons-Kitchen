@@ -88,7 +88,7 @@
                         <div class="overlay">
                             <h3>(#1) Ribs</h3>
                             <button class="AddToOrder" id="1_Ribs"
-                                onClick="AddToOrder()"
+                                onClick="AddToOrder()" value="8.75"
                                 type="submit">Add to Order!</button>
 
                         </div>
@@ -101,6 +101,7 @@
                         <div class="overlay">
                             <h3>(#2) Chicken</h3>
                             <button class="AddToOrder" id="2_Chicken"
+                                value="8.75"
                                 type="submit" onClick="AddToOrder()">Add to
                                 Order!</button>
                         </div>
@@ -113,7 +114,7 @@
                         <div class="overlay">
                             <h3>(#3) Crawfish</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="3_Crawfish"
+                                id="3_Crawfish" value="8.75"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -127,7 +128,7 @@
                         <div class="overlay">
                             <h3>(#4) Pork</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="4_Pork"
+                                id="4_Pork" value="8.75"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -139,7 +140,7 @@
                         <div class="overlay">
                             <h3>(#5) Turkey</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="5_Turkey"
+                                id="5_Turkey" value="7.25"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -151,7 +152,7 @@
                         <div class="overlay">
                             <h3>(#6) Pork Links</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="6_Pork_Links"
+                                id="6_Pork_Links" value="6.75"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -165,7 +166,7 @@
                         <div class="overlay">
                             <h3>(#7) Coleslaw</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="7_Coleslaw"
+                                id="7_Coleslaw" value="2.99"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -177,7 +178,7 @@
                         <div class="overlay">
                             <h3>(#8) Fried Corn</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="8_Fried_Corn"
+                                id="8_Fried_Corn" value="3.99"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -189,7 +190,7 @@
                         <div class="overlay">
                             <h3>(#9) Apple Pie</h3>
                             <button onClick="AddToOrder()" class="AddToOrder"
-                                id="9_Apple_Pie"
+                                id="9_Apple_Pie" value="4.99"
                                 type="submit">Add to Order!</button>
                         </div>
                     </div>
@@ -212,12 +213,12 @@
                                 <li><form action=""><input type="text" id="name"
                                             placeholder="Enter Name..."></input>
                                     <input id="phone_number"
-                                        placeholder="Enter Phone Number..."><textarea
-                                        id="order_field" cols="10" rows="10"
-                                        placeholder="Please Add Above..."
-                                        disabled></textarea>
+                                        placeholder="Enter Phone Number...">
+                                    <div class="textarea"
+                                        id="order_field"><p class="orderAbove">Order
+                                            above...</p></div>
                                     <input type="button" class="submit"
-                                        value="Add to Order!">
+                                        value="Place Order!">
                                 </form></li>
                         </ul>
                     </div>
@@ -237,8 +238,9 @@
                                 <p class="modal-text"></p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary
-                                    confirm">Confirm</button>
+                                <a href=""><button type="button" class="btn
+                                        btn-primary
+                                        confirm">Continue</button></a>
                                 <button type="button" class="btn btn-danger"><i
                                         class="fa fa-pencil-square-o"
                                         aria-hidden="true"></i></button>
