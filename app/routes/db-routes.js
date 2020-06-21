@@ -11,7 +11,7 @@ console.log(process.env.APIKEY)
 
 module.exports = app => {
     app.get('/all_current_orders', (req, res) => {
-        db.Orders.findAll().then(response => {
+        db.Orders.findAll({}).then(response => {
             res.json(response)
             res.send(response)
             console.log(response)
