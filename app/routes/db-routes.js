@@ -1,5 +1,6 @@
 require("dotenv").config();
 const db = require("../models")
+
 const Nexmo = require("nexmo")
 const nexmo = new Nexmo({
     apiKey: process.env.APIKEY,
@@ -9,6 +10,13 @@ const nexmo = new Nexmo({
 console.log(process.env.APIKEY)
 
 module.exports = app => {
+    app.get('/all_current_orders', (req, res) => {
+        db.Orders.findAll().then(response => {
+            res.json(response)
+            res.send(response)
+            console.log(response)
+        })
+    })
     app.post("/api/user", (req, res) => {
         db.User.create(req.body).then(results => {
             res.json(results)
