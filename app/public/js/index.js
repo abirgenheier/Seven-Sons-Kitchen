@@ -107,3 +107,8 @@ $('.close').click(() => {
 $('.confirm').click(() => {
     $('.modal').hide()
 })
+
+function AddToOrder() {
+    var item = "#" + (event.target.id).replace(/_/g, ' ');
+    console.log(item)
+}

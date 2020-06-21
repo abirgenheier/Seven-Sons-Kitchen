@@ -4,6 +4,10 @@ module.exports = (sequelize, DataTypes) => {
         phone_number: DataTypes.STRING,
         order: {
             type: DataTypes.STRING
+        },
+        complete: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         }
     })
 

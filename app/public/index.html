@@ -86,7 +86,11 @@
                         <img class="card-image"
                             src="./assets/plate_of_ribs.jpeg" alt="">
                         <div class="overlay">
-                            <h3>Ribs</h3>
+                            <h3>(#1) Ribs</h3>
+                            <button class="AddToOrder" id="1_Ribs"
+                                onClick="AddToOrder()"
+                                type="submit">Add to Order!</button>
+
                         </div>
                     </div>
                 </div>
@@ -95,7 +99,10 @@
                         <img class="card-image"
                             src="./assets/chicken_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Chicken</h3>
+                            <h3>(#2) Chicken</h3>
+                            <button class="AddToOrder" id="2_Chicken"
+                                type="submit" onClick="AddToOrder()">Add to
+                                Order!</button>
                         </div>
                     </div>
                 </div>
@@ -104,7 +111,10 @@
                         <img class="card-image"
                             src="./assets/crawfish_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Crawfish</h3>
+                            <h3>(#3) Crawfish</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="3_Crawfish"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -115,7 +125,10 @@
                         <img class="card-image"
                             src="./assets/pork_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Pork</h3>
+                            <h3>(#4) Pork</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="4_Pork"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -124,7 +137,10 @@
                         <img class="card-image"
                             src="./assets/turkey_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Turkey</h3>
+                            <h3>(#5) Turkey</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="5_Turkey"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -133,7 +149,10 @@
                         <img class="card-image"
                             src="./assets/pork_links_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Pork Links</h3>
+                            <h3>(#6) Pork Links</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="6_Pork_Links"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +163,10 @@
                         <img class="card-image"
                             src="./assets/coleslaw_plate.jpg" alt="">
                         <div class="overlay">
-                            <h3>Coleslaw</h3>
+                            <h3>(#7) Coleslaw</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="7_Coleslaw"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -153,7 +175,10 @@
                         <img class="card-image"
                             src="./assets/corn.jpg" alt="">
                         <div class="overlay">
-                            <h3>Fried Corn</h3>
+                            <h3>(#8) Fried Corn</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="8_Fried_Corn"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -162,7 +187,10 @@
                         <img class="card-image"
                             src="./assets/applepie.jpg" alt="">
                         <div class="overlay">
-                            <h3>Apple Pie</h3>
+                            <h3>(#9) Apple Pie</h3>
+                            <button onClick="AddToOrder()" class="AddToOrder"
+                                id="9_Apple_Pie"
+                                type="submit">Add to Order!</button>
                         </div>
                     </div>
                 </div>
@@ -184,12 +212,12 @@
                                 <li><form action=""><input type="text" id="name"
                                             placeholder="Enter Name..."></input>
                                     <input id="phone_number"
-                                        placeholder="Enter Phone Number...">
-                                    <textarea id="order" id="" cols="30"
-                                        rows="10"
-                                        placeholder="List order..."></textarea>
+                                        placeholder="Enter Phone Number..."><textarea
+                                        id="order_field" cols="10" rows="10"
+                                        placeholder="Please Add Above..."
+                                        disabled></textarea>
                                     <input type="button" class="submit"
-                                        value="submit">
+                                        value="Add to Order!">
                                 </form></li>
                         </ul>
                     </div>
