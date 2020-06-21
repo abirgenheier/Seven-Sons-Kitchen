@@ -79,7 +79,7 @@ $('.submit').click(() => {
     var _order = $('#order').val().trim()
     console.log(name)
     if (name !== '' || name !== null || phone_number !== '' || phone_number !== null || _order !== '' || _order !== null) {
-        $('.modal-text').text(`${name}, you ordered ${_order}, and a good number to reach you at is ${phone_number}. Is that correct?`)
+        $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? Is that correct?`)
         var order = {
             name: name,
             phone_number: phone_number,
@@ -87,6 +87,17 @@ $('.submit').click(() => {
         }
         $.post("/api/user/order", order)
         $('.modal').show()
+        fetch('/', {
+            method: 'post',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ number: $('#phone_number').val().trim(), text: _order })
+        }).then((response) => {
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        })
     }
 })
 
