@@ -83,8 +83,11 @@ $('.submit').click(() => {
     var sub_total = total_order.reduce(function (a, b) {
         return a + b;
     }, 0);
+    console.log(name.length)
     var total = "$" + ((sub_total * 1.06).toFixed(2)).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-    if (name !== '' || name !== null || phone_number !== '' || phone_number !== null || _order !== '' || _order !== null) {
+    if (name.length > 1 || phone_number > 1 || _order > 1) {
+        $('.submit').removeClass('disabled')
+        $('.confirm').prop('disabled', false);
         $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
         Please press 'Continue' to pay.`)
         var send_order = {
@@ -112,10 +115,21 @@ $('.submit').click(() => {
 $('.close').click(() => {
     $('.modal').hide()
 })
+$('#close-alert').click(() => {
+    $('.alert').hide()
+})
+$('.edit').click(() => {
+    $('.modal').hide()
+})
 $('.confirm').click(() => {
     $('.modal').hide()
 })
 
+$('.submit').on('click', function (e) {
+    if ($(this).hasClass('disabled')) {
+        $('.alert').show()
+    }
+});
 
 
 function AddToOrder() {

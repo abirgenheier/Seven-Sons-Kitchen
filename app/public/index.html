@@ -217,7 +217,7 @@
                                     <div class="textarea"
                                         id="order_field"><p class="orderAbove">Order
                                             above...</p></div>
-                                    <input type="button" class="submit"
+                                    <input type="button" class="submit disabled"
                                         value="Place Order!">
                                 </form></li>
                         </ul>
@@ -242,12 +242,25 @@
                                         btn-primary
                                         confirm">Continue</button></a>
                                 <button type="button" class="btn btn-danger"><i
-                                        class="fa fa-pencil-square-o"
+                                        class="fa fa-pencil-square-o edit"
                                         aria-hidden="true"></i></button>
                                 <button type="button" class="btn btn-secondary
                                     close"
                                     data-dismiss="modal">Close</button>
+                                <!-- Alert -->
+                                <div class="alert alert-warning
+                                    alert-dismissible
+                                    fade show" role="alert">
+                                    <strong>Holy guacamole!</strong> You should
+                                    check in on some of those fields below.
+                                    <button type="button" class="close"
+                                        data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!-- Alert -->
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -295,7 +308,6 @@
             </div>
         </div>
     </div>
-    <div>
         <script src="./assets/swiperjs/swiper.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="crossorigin="anonymous"></script>
