@@ -40,7 +40,7 @@ passport.use(new GoogleStrategy({
         return done(null, profile)
     }))
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log('APP LISTENING ON PORT' + PORT)
     })

@@ -420,6 +420,6 @@ body{
     margin: 0 5px 5px 0;
 }
 
-.alert{ 
-  z-index: 100 !important;
+.add_error {
+  border: 2px red solid !important;
 }

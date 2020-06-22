@@ -36,7 +36,7 @@ module.exports = app => {
     app.post("/", (req, res) => {
         res.send(req.body);
         const number = req.body.number;
-        const message = req.body.text;
+        const message = `Hi ${req.body.name}, thank you for choosing Seven Son's Kitchen today! If there are any questions, please call (253)-555-5555`;
 
         nexmo.message.sendSms(
             "14256209722", number, message, { type: "unicode" }, (error, responseData) => {

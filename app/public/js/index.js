@@ -79,54 +79,46 @@ $('.alert').hide()
 
 $('.submit').click(() => {
     var name = toTitleCase($('#name').val().trim()).replace(/\s+/g, '-')
-    var phone_number = formatPhoneNumber($('#phone_number').val().trim())
+    // var phone_number = formatPhoneNumber($('#phone_number').val().trim())
     var _order = (customer_order.toString()).replace(/,/g, ', ');
     var sub_total = total_order.reduce(function (a, b) {
         return a + b;
     }, 0);
     var total = "$" + ((sub_total * 1.06).toFixed(2)).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     if (+name.length > 1 && +document.querySelector('#phone_number').value.length > 1 && +document.querySelector('.textarea').innerText.length > 14) {
-        console.log('1231')
+        $('.modal').show()
         $('.submit').removeClass('disabled')
         $('.confirm').prop('disabled', false);
-        $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
-        Please press 'Continue' to pay.`)
-        var send_order = {
-            name: name,
-            phone_number: phone_number,
-            order: _order,
-            total: total
-        }
-        $.post("/api/user/order", send_order)
-        $('.modal').show()
-        fetch('/', {
-            method: 'post',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({ number: $('#phone_number').val().trim(), text: _order })
-        }).then((response) => {
-            console.log(response)
-        }).catch(error => {
-            console.log(error)
-        })
-    } else {
-        if (+name.length < 1) {
-            document.querySelector('#name').style.border = "1px solid red"
-            console.log('1')
-        }
-        if (+document.querySelector('#phone_number').value.length < 1) {
-            document.querySelector('#phone_number').style.border = "1px solid red"
-            console.log('2')
-        }
-        if (+document.querySelector('.textarea').innerText.length < 14) {
-            document.querySelector('.textarea').style.border = "1px solid red"
-            console.log('3')
-        }
+        $('.modal-text').text(`${name}, you ordered ${_order}... and ${formatPhoneNumber($('#phone_number').val().trim()) == null ? $('#phone_number').val().trim() : formatPhoneNumber($('#phone_number').val().trim())} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
+            Please press 'Continue' to pay.`)
+    }
+    if (+(document.querySelector('#name').value.length) <= 1) {
+        document.querySelector('#name').classList.add('add_error')
+    }
+    if (+document.querySelector('#phone_number').value.length <= 1) {
+        document.querySelector('#phone_number').classList.add('add_error')
+    }
+    if (+document.querySelector('.textarea').innerText.length <= 15) {
+        document.querySelector('.textarea').classList.add('add_error')
     }
 })
 
-console.log(document.querySelector('.textarea').innerText.length)
+//Remove Red/Alert
+$('#name').keydown(() => {
+    if (+(document.querySelector('#name').value.length) > 1) {
+        document.querySelector('#name').classList.remove('add_error')
+    }
+})
+$('#phone_number').keydown(() => {
+    if (+document.querySelector('#phone_number').value.length > 1) {
+        document.querySelector('#phone_number').classList.remove('add_error')
+    }
+})
+$(document).click(() => {
+    if (+document.querySelector('.textarea').innerText.length > 15) {
+        document.querySelector('.textarea').classList.remove('add_error')
+    }
+})
 
 
 $('.close').click(() => {
@@ -137,9 +129,36 @@ $('.edit').click(() => {
     $('.modal').hide()
 })
 $('.confirm').click(() => {
+    var name = toTitleCase($('#name').val().trim()).replace(/\s+/g, '-')
+    var _order = (customer_order.toString()).replace(/,/g, ', ');
+    var sub_total = total_order.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    var total = "$" + ((sub_total * 1.06).toFixed(2)).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    $('.modal-text').text(`${name}, you ordered ${_order}... and ${formatPhoneNumber($('#phone_number').val().trim())} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
+        Please press 'Continue' to pay.`)
+    var send_order = {
+        name: name,
+        phone_number: formatPhoneNumber($('#phone_number').val().trim()),
+        order: _order,
+        total: total
+    }
+    $.post("/api/user/order", send_order)
+
+    fetch('/', {
+        method: 'post',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({ number: ($('#phone_number').val().trim()).charAt(0) === 1 ? "1" + $('#phone_number').val().trim() : $('#phone_number').val().trim(), text: _order, name: toTitleCase($('#name').val().trim()).replace(/\s+/g, '-') })
+    }).then((response) => {
+        console.log(response)
+    }).catch(error => {
+        console.log(error)
+    })
     $('.modal').hide()
 })
-
+//Submit button has disabled class by default. If removed, then all fields are valid. Checks for validity, if still disabled, then warning given.
 $('.submit').on('click', function (e) {
     if ($(this).hasClass('disabled')) {
         $('.alert').show()
@@ -159,9 +178,6 @@ function AddToOrder() {
     customer_order.push(item.substring(3))
 
 }
-
-
-
 function deleteOrder() {
     event.target.parentNode.style.display = 'none'
 }

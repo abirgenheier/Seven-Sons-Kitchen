@@ -1,0 +1,27 @@
+.swiper {
+    position: absolute;
+    height: 65%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    width: 100px;
+    background-color: rgba(173,216,230, .7);
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    transition: .5s ease;
+}
+
+
+
+.swiper:hover{
+    cursor: pointer;
+    width: 125px;
+}
+
+.swiper i {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    color: whitesmoke;
+}
