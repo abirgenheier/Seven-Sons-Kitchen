@@ -7,7 +7,7 @@ $(document).ready(() => {
                 `
             <div class="row" id="${order.id}">
                 <div class="col-12">
-                    <div class="card" ondblclick="finished()">
+                    <div class="card" onClick="finished()">
                         <div class="card-header">
                             <p id="order_id">Order Number: ${order.id}</p>
                             <p id="order_time">${order.createdAt}</p>       
@@ -30,5 +30,16 @@ $(document).ready(() => {
 })
 
 function finished() {
-    console.log(event.target.id)
+    var _id = event.target.id
+    event.target.classList.add('extend')
+    console.log(event.target.classList)
+    setTimeout(() => {
+        $(`#${_id}`).empty()
+    }, 400)
+    var complete = {
+        complete: "1"
+    }
+    $.post('/api/order_update', complete, response => {
+        console.log(response)
+    })
 }

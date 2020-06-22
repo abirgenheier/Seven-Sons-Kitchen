@@ -9,14 +9,14 @@
     z-index: 10;
     right: 0;
     bottom: 0;
-    transition: .5s ease;
+    transition: .2s ease;
 }
-
 
 
 .swiper:hover{
     cursor: pointer;
     width: 125px;
+    background-color:  rgba(4, 190, 252, 0.9);
 }
 
 .swiper i {
@@ -24,4 +24,9 @@
     margin-right: auto;
     margin-top: 70px;
     color: whitesmoke;
+}
+
+.extend {
+    width: 1110px !important;
+    background-color:  rgba(4, 190, 252, 1) !important;
 }

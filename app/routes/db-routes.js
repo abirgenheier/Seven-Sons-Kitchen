@@ -10,8 +10,25 @@ const nexmo = new Nexmo({
 console.log(process.env.APIKEY)
 
 module.exports = app => {
+    // Sends Txt
+    app.post("/", (req, res) => {
+        res.send(req.body);
+        const number = req.body.number;
+        const message = `Hi ${req.body.name}, thank you for choosing Seven Son's Kitchen today! If there are any questions, please call (253)-555-5555`;
+
+        nexmo.message.sendSms(
+            "14256209722", number, message, { type: "unicode" }, (error, responseData) => {
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.dir(responseData)
+                }
+            }
+        )
+    })
+    // Returns only current orders
     app.get('/all_current_orders', (req, res) => {
-        db.Orders.findAll({}).then(response => {
+        db.Orders.findAll({ where: { complete: 0 } }).then(response => {
             res.json(response)
             res.send(response)
             console.log(response)
@@ -33,21 +50,6 @@ module.exports = app => {
             res.json(results)
         })
     })
-    app.post("/", (req, res) => {
-        res.send(req.body);
-        const number = req.body.number;
-        const message = `Hi ${req.body.name}, thank you for choosing Seven Son's Kitchen today! If there are any questions, please call (253)-555-5555`;
-
-        nexmo.message.sendSms(
-            "14256209722", number, message, { type: "unicode" }, (error, responseData) => {
-                if (error) {
-                    console.log(error)
-                } else {
-                    console.dir(responseData)
-                }
-            }
-        )
-    })
     app.get("/api/user/review/:user", (req, res) => {
         db.Reviews.findOne({
             where: {
@@ -55,6 +57,24 @@ module.exports = app => {
             }
         }).then(response => {
             res.json(response)
+        })
+    })
+    app.put("/api/order_update", (req, res) => {
+        var id = req.params.id
+        var _complete = req.body.complete
+        db.Orders.find({
+            where: {
+                id: id
+            }
+        }).on('success', (results) => {
+            if (results) {
+                results.update({
+                    complete: _complete
+                }).success(results => {
+                    console.log(results)
+                    res.json(results)
+                })
+            }
         })
     })
     app.delete("/api/user/review/delete/:id", (req, res) => {
