@@ -366,7 +366,7 @@ body{
 }
 .login-oauth-list input, textarea {
   background-color: transparent;
-  color: black;
+  color: white;
   border: .5px solid white;
   width: 100%
 }
@@ -418,4 +418,8 @@ body{
     font-weight: bold;
     padding: 5px;
     margin: 0 5px 5px 0;
+}
+
+.alert{ 
+  z-index: 100 !important;
 }

@@ -75,6 +75,7 @@ var total_order = []
 var customer_order = []
 
 $('.modal').hide()
+$('.alert').hide()
 
 $('.submit').click(() => {
     var name = toTitleCase($('#name').val().trim()).replace(/\s+/g, '-')
@@ -83,9 +84,9 @@ $('.submit').click(() => {
     var sub_total = total_order.reduce(function (a, b) {
         return a + b;
     }, 0);
-    console.log(name.length)
     var total = "$" + ((sub_total * 1.06).toFixed(2)).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-    if (name.length > 1 || phone_number > 1 || _order > 1) {
+    if (+name.length > 1 && +document.querySelector('#phone_number').value.length > 1 && +document.querySelector('.textarea').innerText.length > 14) {
+        console.log('1231')
         $('.submit').removeClass('disabled')
         $('.confirm').prop('disabled', false);
         $('.modal-text').text(`${name}, you ordered ${_order}... and ${phone_number} is a good number to reach you at incase if there are any issues? If that is correct, then with tax, the total comes out to ${total}.
@@ -109,13 +110,27 @@ $('.submit').click(() => {
         }).catch(error => {
             console.log(error)
         })
+    } else {
+        if (+name.length < 1) {
+            document.querySelector('#name').style.border = "1px solid red"
+            console.log('1')
+        }
+        if (+document.querySelector('#phone_number').value.length < 1) {
+            document.querySelector('#phone_number').style.border = "1px solid red"
+            console.log('2')
+        }
+        if (+document.querySelector('.textarea').innerText.length < 14) {
+            document.querySelector('.textarea').style.border = "1px solid red"
+            console.log('3')
+        }
     }
 })
 
+console.log(document.querySelector('.textarea').innerText.length)
+
+
 $('.close').click(() => {
     $('.modal').hide()
-})
-$('#close-alert').click(() => {
     $('.alert').hide()
 })
 $('.edit').click(() => {
