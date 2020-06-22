@@ -81,6 +81,8 @@ body{
     border: 1.5px solid rgb(255,255,255);
 }
 
+
+
 .header li:hover {
     cursor: pointer;
     color: rgba(245, 245, 245, 0.616);
