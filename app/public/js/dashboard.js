@@ -10,10 +10,10 @@ $(document).ready(() => {
                     <div class="card" onClick="finished()">
                         <div class="card-header">
                             <p id="order_id">Order Number: ${order.id}</p>
-                            <p id="order_time">${order.createdAt}</p>       
+                            <p id="order_time" id="${(order.createdAt).substring(11)}">${(order.createdAt).substring(11)}</p>       
                         </div>
                     <div class="card-body">
-                        <div class="swiper" id="${order.id}"><i class="fas fa-angle-double-left fa-2x"></i></div>
+                        <div class="swiper" title="complete" id="${order.id}"><i class="fas fa-angle-double-left fa-2x"></i></div>
                         <blockquote class="blockquote mb-0">
                             <p class="order-body" id="order">${order.order}</p>
                         <footer class="blockquote-footer">
@@ -37,9 +37,21 @@ function finished() {
         $(`#${_id}`).empty()
     }, 400)
     var complete = {
-        complete: "1"
+        complete: 1
     }
-    $.post('/api/order_update', complete, response => {
-        console.log(response)
-    })
+    $.ajax("/api/order_update/" + _id, {
+        type: "PUT",
+        data: complete
+    }).then(
+        function () {
+            console.log('Done');
+            // Reload the page to get the updated list
+            location.reload();
+        }
+    );
 }
+
+var fifteen_minutes = 15 * 60 * 1000;
+$(document).ready(() => {
+    console.log($('.order_time').attr('id'))
+})

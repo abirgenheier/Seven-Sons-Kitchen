@@ -59,22 +59,17 @@ module.exports = app => {
             res.json(response)
         })
     })
-    app.put("/api/order_update", (req, res) => {
-        var id = req.params.id
+    app.put("/api/order_update/:id", (req, res) => {
+        var _id = req.params.id
         var _complete = req.body.complete
-        db.Orders.find({
+        console.log(_complete)
+        db.Orders.update(req.body, {
             where: {
-                id: id
+                id: _id
             }
-        }).on('success', (results) => {
-            if (results) {
-                results.update({
-                    complete: _complete
-                }).success(results => {
-                    console.log(results)
-                    res.json(results)
-                })
-            }
+        }).then(results => {
+            console.log(results)
+            res.json(results)
         })
     })
     app.delete("/api/user/review/delete/:id", (req, res) => {
