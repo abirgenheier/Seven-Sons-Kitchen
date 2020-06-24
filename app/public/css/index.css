@@ -80,6 +80,21 @@ body{
     top: 0px;
     border: 1.5px solid rgb(255,255,255);
 }
+.logo-sevensons {
+    position: absolute;
+    margin-left: 500px;
+    margin-right: 500px;
+    height: 550px;
+    width: 550px;
+    border-radius: 50%;
+    background-image: url(../assets/favicon/Seven-Sons-Kitchen.jpg);
+    background-position: center;
+    background-size: 1400px ;
+    object-fit: cover;
+    object-position: center;
+    top: 0px;
+    border: 1.5px solid rgb(255,255,255);
+}
 
 
 
@@ -300,12 +315,33 @@ body{
       color: whitesmoke;
       text-align: center;
       margin-top: 5px;
+  }
 
-
+  .overlay p {
+    color: whitesmoke;
+    text-align: center;
+    padding: 2px 5px
   }
   
   .card:hover .overlay {
     height: 100%;
+  }
+
+  .overlay button {
+    position: absolute;
+  top: 90%;
+  left: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  
+    border-radius: 5px !important;
+    border-color: transparent;
+    background-color: white;
+    font-weight: bold;
+    float: center;
+  }
+  .overlay button:active {
+    transform: scale(.9);
   }
 
   /* Takeout */
@@ -331,20 +367,8 @@ body{
       margin-left: 110px;
   }
 
-  /* @keyframes animate__backInDown {
 
-    0% {
-      transform: translateX(0);
-    }
-  
-    100% {
-      transform: translateX(100%);
-    }
-  
-  }
-  
 
-   */
 
    /* Footer */
 
@@ -357,9 +381,9 @@ body{
 
 .login-oauth-list {
   border: 2px white solid;
-  margin-top: 20px;
   padding: 10px 40px;
   margin: 10px;
+  margin-top: 35px !important
 }
 
 .login-oauth-list h1 {
@@ -424,4 +448,346 @@ body{
 
 .add_error {
   border: 2px red solid !important;
+}
+
+/* Catering */
+
+#about {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1400px){
+  .swiper-container {
+    display: none;
+  }
+  .header li {
+    font-size: 40px;
+  }
+  .header li:nth-of-type(1){
+    padding-left: 75px;
+  }
+  .logo-sevensons {
+    margin-left: 370px !important
+  }
+
+  .about {
+    padding-left: 290px !important;
+    width: 100%;
+    border: none;
+  }
+  .contact-icons {
+    padding-left: 140px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 1243px){
+  .logo-sevensons {
+    margin-left: 315px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 125px;
+  }
+  .header li {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1199px){
+  .logo-sevensons {
+    margin-left: 305px !important
+  }
+  .header li {
+    font-size: 30px;
+  }
+  .header li:nth-of-type(1){
+    padding-left: 105px;
+  }
+  .contact-icons {
+    padding-left: 45px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 1119px){
+  .logo-sevensons {
+    margin-left: 265px !important
+  }
+  .header li {
+    font-size: 30px;
+  }
+  .header li:nth-of-type(1){
+    padding-left: 65px;
+  }
+  .about{
+    margin-top: 30px;
+  }
+
+}
+@media (max-width: 1079px){
+  .logo-sevensons {
+    margin-left: 245px !important
+  }
+  .header li {
+    font-size: 25px;
+  }
+  .header li:nth-of-type(1){
+    padding-left: 75px;
+  }
+}
+@media (max-width: 1012px){
+  .logo-sevensons {
+    margin-left: 210px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 45px;
+  }
+}
+
+@media (max-width: 991px){
+  .about {
+    padding-left: 447px !important;
+    width: 150%;
+    border: none;
+  }
+  .contact-icons {
+    padding-left: 10px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 982px){
+  .logo-sevensons {
+    margin-left: 205px !important
+  }
+  .header li {
+    font-size: 22px;
+  }
+  .header li:nth-of-type(1){
+    padding-left: 65px;
+  }
+}
+
+@media (max-width: 956px){
+  .header li:nth-of-type(1){
+    padding-left: 45px;
+  }
+}
+@media (max-width: 936px){
+  .header li:nth-of-type(1){
+    padding-left: 30px;
+  }
+}
+@media (max-width: 921px){
+  .logo-sevensons{
+    height: 500px;
+    width: 500px; 
+    background-size: 1255px;
+   
+  }
+  .header li {
+    font-size: 35px
+  }
+  .header li:nth-of-type(1){
+    padding-left: 80px;
+    
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 200px;
+  }
+  .header li:nth-of-type(3) {
+    padding-left: 0px;
+  }
+    
+}
+@media (max-width: 896px){
+  .logo-sevensons{
+    height: 500px;
+    width: 500px; 
+    background-size: 1255px;
+  }
+    
+}
+@media (max-width: 916px){
+  .logo-sevensons{
+    height: 500px;
+    width: 500px; 
+    background-size: 1255px;
+    margin-left: 175px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 50px;
+  }
+}
+@media (max-width: 916px){
+  .header li:nth-of-type(1){
+    padding-left: 60px;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 175px;
+}
+}
+@media (max-width: 851px){
+  .carousel-item{
+    height: 345px;
+  }
+  .logo-sevensons{
+    height: 400px;
+    width: 400px; 
+    background-size: 1055px;
+    margin-left: 205px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 60px;
+  }
+  .header li{
+    font-size: 30px
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 215px;
+  }
+}
+@media (max-width: 814px){
+  .header li:nth-of-type(1){
+    padding-left: 80px;
+  }
+  .header li{
+    font-size: 27px
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 215px;
+  }
+}
+@media (max-width: 814px){
+  .logo-sevensons{
+    margin-left: 185px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 60px;
+  }
+}
+@media (max-width: 768px){
+  .logo-sevensons{
+    margin-left: 165px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 50px;
+  }
+}
+@media (max-width: 758px){
+  .header li:nth-of-type(1){
+    padding-left: 30px;
+  }
+  .about {
+    padding-left: 195px !important
+  }
+  .about p {
+    width: 140%;
+  }
+  .contact-icons {
+    display: none;
+  }
+}
+@media (max-width: 738px){
+  .logo-sevensons{
+    margin-left: 135px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 10px;
+  }
+}
+@media (max-width: 718px){
+  .logo-sevensons{
+    margin-left: 135px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 10px;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 200px;
+  }
+}
+@media (max-width: 703px){
+  .logo-sevensons{
+    margin-left: 125px !important
+  }
+  .header li:nth-of-type(1){
+    padding-left: 10px;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 190px;
+  }
+}
+@media (max-width: 694px){
+  .carousel-item{
+    height: 255px;
+    
+  }
+  .logo-sevensons{
+    height: 300px;
+    width: 300px;
+    background-size: 728px;
+    margin-left: 175px !important;
+  }
+  .header ul {
+    padding: 20px 0;
+  }
+  .header a{
+    font-size: 25px !important;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 190px;
+  }
+  .header li:nth-of-type(1) {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 694px){
+  .header a{
+    font-size: 22px !important;
+  }
+}
+@media (max-width: 623px){
+  .header li:nth-of-type(1) {
+    padding-left: 30px;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 140px;
+  }
+  .logo-sevensons{
+    height: 300px;
+    width: 300px;
+    background-size: 728px;
+    margin-left: 125px !important;
+  }
+}
+@media (max-width: 586px){
+  .header li:nth-of-type(1) {
+    padding-left: 20px;
+  }
+  .header li:nth-of-type(2) {
+    padding-right: 140px;
+  }
+}
+@media (max-width: 576px){
+  .header ul {
+    text-align: center;
+    padding-top: 60px;
+  }
+  .header li { 
+ 
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 5px !important
+  }
+}
+
+@media (max-width: 466px){
+  .logo-sevensons{
+    margin-left: 75px !important;
+  }
+  .about, form{
+    display: none
+  }
+  .contact {
+    width: 100% !important
+  }
 }

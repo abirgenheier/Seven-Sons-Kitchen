@@ -23,14 +23,6 @@
             <!-- carousel -->
             <div id="carouselExampleIndicators" class="carousel slide"
                 data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators"
-                        data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators"
-                        data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators"
-                        data-slide-to="2"></li>
-                </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="./assets/rib.jpg"
@@ -60,8 +52,8 @@
             </div>
             <!--  -->
             <!-- img -->
-            <img class="logo" src="./assets/sevensonsbus.jpg" alt="">
-            <!-- <img class="logo" src="./assets/favicon/Seven-Sons-Kitchen.jpg" alt=""> -->
+            <!-- <img class="logo" src="./assets/sevensonsbus.jpg" alt=""> -->
+            <div class="logo-sevensons"></div>
             <!-- / -->
             <div class="header">
                 <ul>
@@ -89,6 +81,8 @@
                             src="./assets/plate_of_ribs.jpeg" alt="">
                         <div class="overlay">
                             <h3>(#1) Ribs</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
+
                             <button class="AddToOrder" id="1_Ribs"
                                 onClick="AddToOrder()" value="8.75"
                                 type="submit">Add to Order!</button>
@@ -102,6 +96,7 @@
                             src="./assets/chicken_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#2) Chicken</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button class="AddToOrder" id="2_Chicken"
                                 value="8.75"
                                 type="submit" onClick="AddToOrder()">Add to
@@ -115,6 +110,7 @@
                             src="./assets/crawfish_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#3) Crawfish</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="3_Crawfish" value="8.75"
                                 type="submit">Add to Order!</button>
@@ -129,6 +125,7 @@
                             src="./assets/pork_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#4) Pork</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="4_Pork" value="8.75"
                                 type="submit">Add to Order!</button>
@@ -141,6 +138,7 @@
                             src="./assets/turkey_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#5) Turkey</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="5_Turkey" value="7.25"
                                 type="submit">Add to Order!</button>
@@ -153,6 +151,7 @@
                             src="./assets/pork_links_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#6) Pork Links</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="6_Pork_Links" value="6.75"
                                 type="submit">Add to Order!</button>
@@ -167,6 +166,7 @@
                             src="./assets/coleslaw_plate.jpg" alt="">
                         <div class="overlay">
                             <h3>(#7) Coleslaw</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="7_Coleslaw" value="2.99"
                                 type="submit">Add to Order!</button>
@@ -179,6 +179,7 @@
                             src="./assets/corn.jpg" alt="">
                         <div class="overlay">
                             <h3>(#8) Fried Corn</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="8_Fried_Corn" value="3.99"
                                 type="submit">Add to Order!</button>
@@ -191,6 +192,7 @@
                             src="./assets/applepie.jpg" alt="">
                         <div class="overlay">
                             <h3>(#9) Apple Pie</h3>
+                            <p class="item-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facere delectus unde quidem incidunt veritatis optio temporibus eos consequuntur debitis.</p>
                             <button onClick="AddToOrder()" class="AddToOrder"
                                 id="9_Apple_Pie" value="4.99"
                                 type="submit">Add to Order!</button>
@@ -272,7 +274,7 @@
         </div>
         <!-- About -->
         <div class="row row-about" id="about">
-            <div class="col-3">
+            <div class="col-3 " >
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"
