@@ -7,8 +7,6 @@ const nexmo = new Nexmo({
     apiSecret: process.env.SECRET
 }, { debug: true })
 
-console.log(process.env.APIKEY)
-
 module.exports = app => {
     // Sends Txt
     app.post("/", (req, res) => {
